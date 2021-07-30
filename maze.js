@@ -66,7 +66,7 @@ var board = [
  function drawPoints() {
     ctx.font = "20px Arial";
     ctx.fillStyle = "blue";
-    ctx.fillText("Points: "+points, 500, 25);
+    ctx.fillText("Moves: "+points, 500, 25);
  
  }
  
@@ -86,7 +86,7 @@ var board = [
  
  function score(){
     if(checkIfGameOver()){
-        alert("You almost won. To win you need to finish with more 1 or more points");
+        alert("You almost won. To win you need to finish with more 1 or more moves");
         points = 40;
         player.x = 0;
         player.y = 0;
