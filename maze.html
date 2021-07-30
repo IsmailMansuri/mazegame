@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Maze Game</title>
+  </head>
+  <body>
+    <canvas id="GameBoardCanvas" width="600px" height="600px" style="border: 5px solid red">
+    </canvas>
+    <br>
+        <div style="text-align:center;width:320px;" >
+          <button id = "button1" ontouchstart="moveup()" onmousedown="moveup()" onmouseup="clearmove()">UP</button>
+          <br>
+          <br>
+          <button id = "button2" ontouchstart="moveleft()" onmousedown="moveleft()" onmouseup="clearmove()">LEFT</button>
+          <button id = "button3" ontouchstart="moveright()" onmousedown="moveright()" onmouseup="clearmove()">RIGHT</button>
+          <br>
+          <br>
+          <button id = "button4" ontouchstart="movedown()" onmousedown="movedown()" onmouseup="clearmove()">DOWN</button>
+        </div>
+      <br>
+    <script src="maze.js">
+    </script>
+    <style>
+      #button1 {
+        width: 80px;
+        height: 35px;
+        
+        
+      }
+      #button2 {
+        width: 80px;
+        height: 35px;
+        
+        
+      }
+      #button3 {
+        width: 80px;
+        height: 35px;
+        
+      }
+      #button4 {
+        width: 80px;
+        height: 35px;
+        
+      }
+      
+      #GameBoardCanvas {
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        width: 600px;
+      }
+    
+      body {
+        background: black;
+        padding: 5px;
+      }
+    </style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129524041-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129524041-1');
+</script>
+
+  </body>
+</html>
