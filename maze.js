@@ -40,7 +40,7 @@ constructor(points){
  
  
  
- function drawBoard(){
+ drawBoard(){
     ctx.setTransform(1, 0, 0, 1, 0, 0);
     ctx.clearRect(0, 0, width, width);
     ctx.fillStyle="white";
@@ -130,7 +130,7 @@ constructor(points){
  function moveup(){
     if(canMove(player.x, player.y-1)){
         player.y--;
-        game.drawBoard();
+        myGame.drawBoard();
         drawPlayer();
         score();
         if(playing === false){
@@ -143,7 +143,7 @@ constructor(points){
  function movedown(){
     if(canMove(player.x, player.y+1)){
         player.y++;
-        game.drawBoard();
+        myGame.drawBoard();
         drawPlayer();
         score();
         if(playing === false){
@@ -157,7 +157,7 @@ constructor(points){
 function moveleft(){
     if(canMove(player.x-1, player.y)){
         player.x--;
-        game.drawBoard();
+        myGame.drawBoard();
         drawPlayer();
         score();
         if(playing === false){
@@ -171,7 +171,7 @@ function moveleft(){
 function moveright(){
     if(canMove(player.x+1, player.y)){
         player.x++;
-        game.drawBoard();
+        myGame.drawBoard();
         drawPlayer();
         score();
         if(playing === false){
@@ -199,7 +199,7 @@ function moveright(){
     }
  
    
-    game.drawBoard();
+    myGame.drawBoard();
     drawPlayer();
     score();
     if(playing === false){
@@ -209,9 +209,9 @@ function moveright(){
     event.preventDefault();
  });}
  
- let myGame = new game(40);
+ let myGame = new game(40);
  move();
- game.drawBoard();
+ myGame.drawBoard();
  drawPlayer();
  drawPoints();
  
