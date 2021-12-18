@@ -29,13 +29,17 @@ var board = [
  var width = 600;
  var blockSize = width/board.length;
  var playing = false;
- var points = 40;
+ 
+ 
+ class game{
+
+constructor(points){
+    this.points=points;
+
+}
  
  
  
- 
- 
- //Draw the game board
  function drawBoard(){
     ctx.setTransform(1, 0, 0, 1, 0, 0);
     ctx.clearRect(0, 0, width, width);
@@ -62,17 +66,18 @@ var board = [
       }
          
  }
+}
  
  function drawPoints() {
     ctx.font = "20px Arial";
     ctx.fillStyle = "blue";
-    ctx.fillText("Moves: "+points, 500, 25);
+    ctx.fillText("Moves: "+game.points, 500, 25);
  
  }
  
  function checkIfGameOver() {
     if(player.x === goal.x && player.y === goal.y){
-        if(points<1){
+        if(game.points<1){
             return true;
         }
         else{
@@ -87,7 +92,7 @@ var board = [
  function score(){
     if(checkIfGameOver()){
         alert("You almost won. To win you need to finish with more 1 or more moves");
-        points = 40;
+        game.points = 40;
         player.x = 0;
         player.y = 0;
         drawPlayer(); 
@@ -95,14 +100,14 @@ var board = [
     }
     else if(checkIfGameOver() === false){
         alert("You won!");
-        points = 40;
+        game.points = 40;
         player.x = 0;
         player.y = 0;
         drawPlayer(); 
         drawPoints();
     }
     else{
-        points--;
+        game.points--;
         drawPoints();
     }
  
@@ -125,7 +130,7 @@ var board = [
  function moveup(){
     if(canMove(player.x, player.y-1)){
         player.y--;
-        drawBoard();
+        game.drawBoard();
         drawPlayer();
         score();
         if(playing === false){
@@ -138,7 +143,7 @@ var board = [
  function movedown(){
     if(canMove(player.x, player.y+1)){
         player.y++;
-        drawBoard();
+        game.drawBoard();
         drawPlayer();
         score();
         if(playing === false){
@@ -152,7 +157,7 @@ var board = [
 function moveleft(){
     if(canMove(player.x-1, player.y)){
         player.x--;
-        drawBoard();
+        game.drawBoard();
         drawPlayer();
         score();
         if(playing === false){
@@ -166,7 +171,7 @@ function moveleft(){
 function moveright(){
     if(canMove(player.x+1, player.y)){
         player.x++;
-        drawBoard();
+        game.drawBoard();
         drawPlayer();
         score();
         if(playing === false){
@@ -194,7 +199,7 @@ function moveright(){
     }
  
    
-    drawBoard();
+    game.drawBoard();
     drawPlayer();
     score();
     if(playing === false){
@@ -204,9 +209,9 @@ function moveright(){
     event.preventDefault();
  });}
  
- 
+ let myGame = new game(40);
  move();
- drawBoard();
+ game.drawBoard();
  drawPlayer();
  drawPoints();
  
